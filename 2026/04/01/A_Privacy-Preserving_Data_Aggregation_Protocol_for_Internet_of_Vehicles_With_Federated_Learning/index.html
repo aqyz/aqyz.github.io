@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 第一篇blog -  LiuswH的博客</title>
+		<title> LiuswH的博客</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -326,24 +326,41 @@
 			<img
 				data-src="/images/background.jpg"
 				data-sizes="auto"
-				alt="第一篇blog"
+				alt=""
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>第一篇blog</h1>
+			<h1></h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2026年04月01日</a>
-			<a><i class="kirafont icon-edit-fill"></i>0 字</a>
+			<a><i class="kirafont icon-edit-fill"></i>487 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分钟</a>
 		</div>
-		
+		<p><strong>基于联邦学习的应用于车联网的隐私保护数据聚合协议</strong></p>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>车联网能使车辆感知和分析交通状况以及周围环境，但是需要不断采集周围环境数据，还需要开放共享驾驶数据。而联邦学习允许多方进行协作训练，并通过参数交互生成全局模型，而无需共享原始数据，保障了原始数据源的隐私。<br>然而，在车联网中，由于路侧单元（RSU）通常被视为半可信节点，并且某些车辆可能会与RSU串通，从而使其面临模型参数泄露的风险。<br>此外，在联邦学习模型训练过程中，攻击者可能会从模型参数中推断本地设备上的数据信息，从而泄露用户隐私。<br><strong>因此，在训练过程中确保模型参数的隐私至关重要。</strong></p>
+<p>为解决上述问题，已有大量基于<strong>差分隐私（DP）、同态加密（HE）、安全多方计算（SMPC）</strong> 等技术的隐私保护协议。但有如下缺陷：</p>
+<ul>
+<li><strong>难以抵抗恶意合作攻击</strong></li>
+<li><strong>数据聚合效率低下</strong></li>
+<li><strong>容错机制需要频繁地依赖可信实体（TA）</strong></li>
+<li><strong>身份验证效率不足</strong></li>
+</ul>
+<p>本文结合了安全多方计算（SMPC）和差分隐私（HE），提出了一种基于联邦学习（FL）的保护隐私的数据聚合协议，有以下特点：</p>
+<ul>
+<li><strong>有效防御RSU和车辆的恶意合作攻击</strong></li>
+<li><strong>动态调整车辆的训练时间窗口</strong></li>
+<li><strong>优化容错机制</strong></li>
+<li><strong>提升车辆每次模型数据上传前的身份验证效率</strong></li>
+</ul>
+<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><p>A. 基于 SMPC 的联邦学习隐私保护方案<br>B. 基于 HE 和 DP 的联邦学习隐私保护方案<br>C. 具有容错能力的联邦学习隐私保护方案</p>
+<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>LiuswH<br>
-        <strong>本文链接：</strong><a href="http://example.com/2026/04/01/%E7%AC%AC%E4%B8%80%E7%AF%87blog/" title="http:&#x2F;&#x2F;example.com&#x2F;2026&#x2F;04&#x2F;01&#x2F;第一篇blog&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2026&#x2F;04&#x2F;01&#x2F;第一篇blog&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="http://example.com/2026/04/01/A_Privacy-Preserving_Data_Aggregation_Protocol_for_Internet_of_Vehicles_With_Federated_Learning/" title="http:&#x2F;&#x2F;example.com&#x2F;2026&#x2F;04&#x2F;01&#x2F;A_Privacy-Preserving_Data_Aggregation_Protocol_for_Internet_of_Vehicles_With_Federated_Learning&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2026&#x2F;04&#x2F;01&#x2F;A_Privacy-Preserving_Data_Aggregation_Protocol_for_Internet_of_Vehicles_With_Federated_Learning&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
