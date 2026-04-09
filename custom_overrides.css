@@ -33,22 +33,30 @@
 }
 
 /* 优雅滚动条 — 不再完全隐藏 */
-.kira-content::-webkit-scrollbar {
-  display: block !important;
-  width: 5px !important;
+html {
+  scrollbar-width: thin !important;
 }
 
-.kira-content::-webkit-scrollbar-track {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: block !important;
+  width: 6px !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
   background: transparent !important;
 }
 
-.kira-content::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background: rgba(49, 174, 255, 0.2) !important;
   border-radius: 10px !important;
   transition: background 0.3s !important;
 }
 
-.kira-content::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
   background: rgba(49, 174, 255, 0.45) !important;
 }
 
@@ -290,17 +298,16 @@ article h2 { font-size: 1.4em !important; line-height: 1.4 !important; }
 /* H2 标题及底部分割线 */
 article h2 {
   margin-top: 28px !important;
-  margin-bottom: 14px !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important; /* 强制清除主题可能带来的 padding */
   font-weight: 700 !important;
   letter-spacing: 0.02em !important;
   position: relative !important;
-  padding-bottom: 5px !important; /* 拉近文字与线条的距离 */
 }
 
-/* H2 底部线条 — 稍微明显一点的单色实线，去掉了彩色渐变 */
+/* H2 底部线条 — 移除标题下方的横线 */
 article h2::before {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08) !important;
-  bottom: 0 !important;
+  display: none !important;
 }
 
 /* 移除先前的彩色渐变特效块 */
@@ -311,7 +318,8 @@ article h2::after {
 /* H3 标题 — 添加左侧圆点装饰 */
 article h3 {
   margin-top: 24px !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important; /* 强制清除主题可能带来的 padding */
   font-weight: 600 !important;
   position: relative !important;
   padding-left: 16px !important;
@@ -595,8 +603,22 @@ article hr {
   border-top: 2px solid rgba(0, 0, 0, 0.08) !important;
   height: 0 !important;
   background: none !important;
-  margin-top: 10px !important;
-  margin-bottom: 24px !important;
+  margin-top: 4px !important; /* 大幅缩小上方边距 */
+  margin-bottom: 0px !important; /* 直接清零底部边距 */
+}
+
+/* 提高选择器权重，确保强制覆盖主题默认样式，缩缩小下方的间距 */
+article hr + p,
+article hr + h1,
+article hr + h2,
+article hr + h3,
+article hr + h4,
+article hr + h5,
+article hr + h6,
+article hr + ul,
+article hr + ol,
+article hr + div {
+  margin-top: 4px !important;
 }
 
 /* =============================================
